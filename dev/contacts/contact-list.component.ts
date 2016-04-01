@@ -1,8 +1,9 @@
-import {Component} from "angular2/core";
-import {ContactComponent} from "./contact.component";
 import {ContactService} from "./contact.service";
 import {Contact} from "./contact";
 import {OnInit} from "angular2/core"
+
+import {Component} from "angular2/core";
+import {ContactComponent} from "./contact.component";
 
 @Component({
 	selector: "contact-list",
