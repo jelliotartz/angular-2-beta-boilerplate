@@ -1,12 +1,23 @@
 body {
-  padding: 50px;
+  padding: 0px;
   margin: 0;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
 }
 
-.main {
+.main, 
+header nav {
 	width: 75%;
 	margin: 32px auto;
 }
 
+header nav a {
+	color: #233dcb;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header nav a:hover,
+header nav a:active {
+	color: #41abf2;
+}
