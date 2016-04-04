@@ -16,7 +16,7 @@ import {ContactComponent} from "./contact.component";
 	        {{contact.firstName}} {{contact.lastName}}
 	    </li>
 	  </ul>
-	  <contact [contact]="selectedContact"></contact>
+	  <contact *ngIf="selectedContact !== null" [contact]="selectedContact"></contact>
 	`,
 	directives: [ContactComponent],
 	providers: [ContactService],
@@ -24,13 +24,8 @@ import {ContactComponent} from "./contact.component";
 })
 
 export class ContactListComponent implements OnInit {
-  public contacts = [
-    { firstName: "James", lastName: "Artz", phone: "123456789", email: "james@james.james" },
-    { firstName: "Jimbo", lastName: "Flenderson", phone: "99999999", email: "jimmy@jimmy.jimmy" },
-    { firstName: "Boris", lastName: "Johnson", phone: "5454545454", email: "flargus@flargus.flargus" },
-	];
-
-  public selectedContact = {};
+  public contacts = [];
+  public selectedContact = null;
 
   constructor(private _contactService: ContactService) {}
 
