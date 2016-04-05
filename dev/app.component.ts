@@ -5,6 +5,8 @@ import {RouteConfig} from "angular2/router";
 import {NewContactComponent} from "./contacts/new-contact.component";
 import {HTTPTestComponent} from "./http-test.component";
 import {ChildComponent} from "./child.component";
+import {Component1Component} from "./component1.component";
+import {Component2Component} from "./component2.component";
 
 
 @Component({
@@ -56,8 +58,15 @@ import {ChildComponent} from "./child.component";
       </div>
     </div>
 
+    <section class="component">
+      <my-component-1></my-component-1>
+    </section>
+    <section class="component">
+      <my-component-2></my-component-2>
+    </section>
+
   `,
-  directives: [ContactListComponent, HTTPTestComponent, ROUTER_DIRECTIVES, ChildComponent]
+  directives: [ContactListComponent, HTTPTestComponent, ROUTER_DIRECTIVES, ChildComponent, Component1Component, Component2Component],
 })
 
 @RouteConfig([
