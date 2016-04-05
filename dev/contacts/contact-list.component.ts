@@ -13,7 +13,7 @@ import {ContactComponent} from "./contact.component";
 	        (click)="onSelect(contact)" 
 	        [class.clicked]="selectedContact === contact"
 	    >
-	        {{contact.firstName}} {{contact.lastName}}
+	        {{contact.firstName}} {{contact.lastName | uppercase}}
 	    </li>
 	  </ul>
 	  <contact *ngIf="selectedContact !== null" [contact]="selectedContact"></contact>
