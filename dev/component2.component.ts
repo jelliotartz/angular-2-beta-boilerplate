@@ -27,3 +27,4 @@ export class Component2Component {
 		this._dataService.insertData(data)
 	}
 }
+
