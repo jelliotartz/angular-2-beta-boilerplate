@@ -2,8 +2,10 @@ import {Component} from 'angular2/core';
 import {ContactListComponent} from "./contacts/contact-list.component";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 import {RouteConfig} from "angular2/router";
-import {NewContactComponent} from "./contacts/new-contact.component"
-import {HTTPTestComponent} from "./http-test.component"
+import {NewContactComponent} from "./contacts/new-contact.component";
+import {HTTPTestComponent} from "./http-test.component";
+import {ChildComponent} from "./child.component";
+
 
 @Component({
   selector: 'my-app',
@@ -43,8 +45,19 @@ import {HTTPTestComponent} from "./http-test.component"
         </div>
       </div>
     </div>
+
+    <div class="parent">
+      <h1>parent</h1>
+      <p>text received from child component: {{childValue}} </p>
+      <p>enter text below to send to child component: </p>
+      <input type="text" #parentInput (keyup)="0"/><br />
+      <div class="child">
+        <child [passedValue]="parentInput.value" (childChanged)="childValue = $event"></child>
+      </div>
+    </div>
+
   `,
-  directives: [ContactListComponent, HTTPTestComponent, ROUTER_DIRECTIVES],
+  directives: [ContactListComponent, HTTPTestComponent, ROUTER_DIRECTIVES, ChildComponent]
 })
 
 @RouteConfig([
@@ -54,6 +67,7 @@ import {HTTPTestComponent} from "./http-test.component"
 ])
 
 export class AppComponent {
+  childValue: string;
   date = new Date();
   randomData = new Promise((resolve, reject) => {
     setTimeout(() => resolve('the async pipe makes it work!'), 1000);
