@@ -28,3 +28,17 @@ header nav a:active {
 	background-color: #eee;
 	border: 1px solid #ccc;
 }
+
+.parent {
+	margin: 32px;
+	padding: 16px;
+	background-color: #aaa;
+	border: 2px solid #888;
+}
+
+.child {
+	margin: 32px;
+	padding: 16px;
+	background-color: #ddd;
+	border: 2px solid #888;
+}
