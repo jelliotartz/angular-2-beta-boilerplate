@@ -7,6 +7,7 @@ import {HTTPTestComponent} from "./http-test.component";
 import {ChildComponent} from "./child.component";
 import {Component1Component} from "./component1.component";
 import {Component2Component} from "./component2.component";
+import {jQueryComponent} from "./jquery.component"
 
 
 @Component({
@@ -64,9 +65,10 @@ import {Component2Component} from "./component2.component";
     <section class="component">
       <my-component-2></my-component-2>
     </section>
-
+    
+    <my-jquery class="jquery-button"></my-jquery>
   `,
-  directives: [ContactListComponent, HTTPTestComponent, ROUTER_DIRECTIVES, ChildComponent, Component1Component, Component2Component],
+  directives: [ContactListComponent, HTTPTestComponent, ROUTER_DIRECTIVES, ChildComponent, Component1Component, Component2Component, jQueryComponent],
 })
 
 @RouteConfig([
